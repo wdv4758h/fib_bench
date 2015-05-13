@@ -1,4 +1,4 @@
-use std::os;
+use std::env;
 
 fn fib(number: usize) -> usize {
     if number < 2 {
@@ -9,6 +9,6 @@ fn fib(number: usize) -> usize {
 }
 
 fn main() {
-    let number: usize = os::args()[1].parse().unwrap();
+    let number: usize = env::args().nth(1).unwrap().parse().unwrap();
     println!("{}", fib(number));
 }
